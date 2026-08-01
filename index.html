@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guidana - Professional Mobile & Web Solutions. iOS Development, Web Apps, Backend, UI/UX Design, Security & Analytics.">
+    <title>Guidana - Professional Development Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        header {
+            background: #1a2332;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 212, 255, 0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00d4ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 18px;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+        .cta-header {
+            background: #00d4ff;
+            color: #1a2332;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .cta-header:hover {
+            background: #00b8d4;
+            transform: translateY(-2px);
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #b0d4ff;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-primary {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1a2332;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+        .cta-primary:hover {
+            background: #00b8d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
+        }
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #00d4ff;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #00d4ff;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cta-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2332;
+            margin-bottom: 56px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #00d4ff;
+            border-radius: 2px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px 32px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.12);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: #00d4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+            color: #1a2332;
+            font-weight: 700;
+        }
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .read-more {
+            display: inline-block;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 14px;
+            transition: all 0.3s;
+        }
+        .read-more:hover {
+            color: #0099cc;
+            transform: translateX(4px);
+        }
+        .light-section {
+            background: #f0f4f8;
+        }
+        .dark-section {
+            background: #1a2332;
+        }
+        .dark-section .section-title {
+            color: #ffffff;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .testimonial-card {
+            background: #2a3f5f;
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+            color: white;
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.15);
+        }
+        .quote-mark {
+            font-size: 48px;
+            color: #00d4ff;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 15px;
+        }
+        .stars {
+            color: #00d4ff;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .process-section {
+            background: #ffffff;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+        .step-number {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .step-circle {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f9fc 100%);
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            color: #00d4ff;
+            border: 3px solid #00d4ff;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.15);
+            transition: all 0.3s;
+        }
+        .process-step:hover .step-circle {
+            transform: scale(1.08);
+            box-shadow: 0 12px 36px rgba(0, 212, 255, 0.25);
+        }
+        .process-step h3 {
+            font-size: 24px;
+            color: #1a2332;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        .process-step p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .stat {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .stat:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+            transform: translateY(-4px);
+        }
+        .stat-icon {
+            font-size: 36px;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: #00d4ff;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .founder-section {
+            background: #f0f4f8;
+            padding: 60px 20px;
+        }
+        .founder-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .founder-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #00d4ff;
+            font-size: 64px;
+            text-align: center;
+            padding: 20px;
+            border: 3px solid #00d4ff;
+            position: relative;
+            overflow: hidden;
+        }
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .founder-image i {
+            position: relative;
+            z-index: 2;
+        }
+        .founder-image p {
+            position: relative;
+            z-index: 2;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #888;
+        }
+        .founder-info h2 {
+            font-size: 28px;
+            color: #1a2332;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .founder-title {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .founder-bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .contact-section {
+            background: #1a2332;
+            color: white;
+            text-align: center;
+        }
+        .contact-section .section-title {
+            color: white;
+        }
+        .contact-info {
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00d4ff;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 32px;
+            display: inline-block;
+        }
+        .contact-info p {
+            margin: 14px 0;
+            color: #b0d4ff;
+            font-size: 15px;
+        }
+        .contact-info a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: #00b8d4;
+        }
+        footer {
+            background: #0f1620;
+            color: #999;
+            padding: 50px 20px 30px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section h4 {
+            color: #00d4ff;
+            margin-bottom: 18px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+        .footer-company {
+            background: rgba(0, 212, 255, 0.08);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .footer-company h5 {
+            color: #00d4ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .footer-company p {
+            color: #999;
+            font-size: 13px;
+            margin: 4px 0;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            .tagline {
+                font-size: 16px;
+            }
+            nav {
+                display: none;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .cta-primary, .cta-secondary {
+                width: 100%;
+            }
+            .founder-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="Guidana"></div>
+                Guidana
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#process">Process</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="cta-header">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Mobile & Web Solutions</h1>
+            <p class="tagline">Build innovative applications that drive growth and create meaningful user engagement</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-primary">Start Your Project</a>
+                <a href="#services" class="cta-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>iOS Development</h3>
+                <p>Native iOS applications built with Swift, delivering premium user experiences optimized for Apple devices.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Web Applications</h3>
+                <p>Modern, responsive web applications using latest technologies and best practices for optimal performance.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>Backend Solutions</h3>
+                <p>Scalable and secure backend infrastructure designed for reliability and high availability.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful and intuitive user interfaces crafted to engage users and enhance digital experiences.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Security</h3>
+                <p>Enterprise-grade security measures protecting user data and ensuring compliance with industry standards.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Analytics & Support</h3>
+                <p>Comprehensive analytics, monitoring, and 24/7 technical support for all our applications.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section dark-section">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-mark">❝</div>
+                <p class="testimonial-text">Guidana delivered an outstanding iOS app that exceeded our expectations. Their team is professional, responsive, and truly understands mobile development. Highly recommended!</p>
+                <div class="testimonial-author">Ahmed Khan</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">❝</div>
+                <p class="testimonial-text">Working with Guidana was a game-changer for our business. They built a scalable backend that handles millions of users effortlessly. Great team, great results!</p>
+                <div class="testimonial-author">Sarah Ali</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">❝</div>
+                <p class="testimonial-text">The UI/UX design and web application Guidana created for us has significantly improved user engagement and satisfaction. Professional work from start to finish!</p>
+                <div class="testimonial-author">Muhammad Hassan</div>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section process-section">
+        <h2 class="section-title">Our Simple Process</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px; font-size: 16px;">We follow a proven methodology to deliver exceptional results</p>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div class="step-circle">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Understand</h3>
+                <p>We begin by getting to know your business, goals, and audience to create a strategic plan that fits your needs perfectly.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div class="step-circle">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <h3>Design</h3>
+                <p>Our creative team crafts beautiful, user-focused designs that help visitors engage and find what they need.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div class="step-circle">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Develop</h3>
+                <p>We build fast, secure, and scalable applications using the latest technologies and best practices.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div class="step-circle">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Support</h3>
+                <p>After launch, we provide ongoing maintenance, monitoring, and support to ensure everything runs smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light-section">
+        <h2 class="section-title">By The Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number">100k+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section founder-section">
+        <h2 class="section-title">Meet Our Founder</h2>
+        <div class="founder-container">
+            <div class="founder-image">
+                <i class="fas fa-user-circle"></i>
+                <p>[Add Professional Photo]</p>
+            </div>
+            <div class="founder-info">
+                <h2>Waqas Mahmood</h2>
+                <div class="founder-title">Founder & CEO</div>
+                <p class="founder-bio">Visionary leader with extensive experience in software development and business strategy. Passionate about building innovative products that solve real-world problems and create lasting impact.</p>
+                <p class="founder-bio">With over a decade of expertise in full-stack development, Waqas leads Guidana with a commitment to excellence, innovation, and delivering solutions that exceed client expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p style="color: #b0d4ff; margin-bottom: 32px; font-size: 16px;">Let's build something great together</p>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:ceo@guidana.online">ceo@guidana.online</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+923046802911">+92 304 6802911</a></p>
+            <p><strong>Website:</strong> guidana.online</p>
+            <p style="margin-top: 20px; font-size: 12px; color: #888;">Response time: 24 hours or less</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-company">
+                <h5>Company Information</h5>
+                <p><strong>Company:</strong> Guidana Technologies LLC</p>
+                <p><strong>Location:</strong> Wyoming, USA</p>
+                <p><strong>Business Type:</strong> Software Development</p>
+                <p><strong>Email:</strong> <a href="mailto:ceo@guidana.online" style="color: #00d4ff;">ceo@guidana.online</a></p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="/">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="/about.html">About</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/cookies.html">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mailto:ceo@guidana.online">Contact Us</a>
+                    <a href="#contact">Get Started</a>
+                    <a href="/about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guidana Technologies LLC. All rights reserved. | <a href="/privacy.html" style="color: #666;">Privacy</a> | <a href="/terms.html" style="color: #666;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

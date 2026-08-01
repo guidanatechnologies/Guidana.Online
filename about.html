@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Guidana - Our mission, values, and story">
+    <title>About Us - Guidana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        header {
+            background: #1a2332;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 212, 255, 0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00d4ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 18px;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00d4ff;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .tagline {
+            font-size: 18px;
+            color: #b0d4ff;
+        }
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a2332;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #00d4ff;
+            border-radius: 2px;
+        }
+        .section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+        .mission-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .value-card {
+            background: #f8f9fa;
+            padding: 36px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s;
+        }
+        .value-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.12);
+            transform: translateY(-4px);
+        }
+        .value-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: #00d4ff;
+        }
+        .value-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1a2332;
+            font-weight: 700;
+        }
+        .value-card p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+        .company-info-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #f8f9fa 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 6px solid #00d4ff;
+            margin: 40px 0;
+        }
+        .company-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .company-detail {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s;
+        }
+        .company-detail:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.1);
+        }
+        .company-detail-icon {
+            font-size: 28px;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .company-detail-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .company-detail-value {
+            font-size: 15px;
+            color: #1a2332;
+            font-weight: 700;
+        }
+        .timeline {
+            margin-top: 40px;
+            position: relative;
+        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+        .timeline-year {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+        .timeline-content {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        .timeline-content:hover {
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+            transform: translateX(4px);
+        }
+        .timeline-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1a2332;
+            font-weight: 700;
+        }
+        .timeline-content p {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .stat {
+            text-align: center;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s;
+        }
+        .stat:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+            transform: translateY(-4px);
+        }
+        .stat-icon {
+            font-size: 32px;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: #00d4ff;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+        .light-section {
+            background: #f0f4f8;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            border-radius: 12px;
+            margin-top: 40px;
+            color: white;
+        }
+        .cta-section h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+        .cta-section h2::after {
+            display: none;
+        }
+        .cta-section p {
+            color: #b0d4ff;
+            margin-bottom: 24px;
+        }
+        .cta-primary {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1a2332;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-primary:hover {
+            background: #00b8d4;
+            transform: translateY(-2px);
+        }
+        footer {
+            background: #0f1620;
+            color: #999;
+            padding: 50px 20px 30px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section h4 {
+            color: #00d4ff;
+            margin-bottom: 18px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+        .footer-company {
+            background: rgba(0, 212, 255, 0.08);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .footer-company h5 {
+            color: #00d4ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .footer-company p {
+            color: #999;
+            font-size: 13px;
+            margin: 4px 0;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none;
+            }
+            .section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="Guidana"></div>
+                Guidana
+            </a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Guidana</h1>
+            <p class="tagline">Building the future of digital innovation</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Our Story</h2>
+        <p>Guidana was founded with a simple vision: to create exceptional software that makes a real difference in people's lives. We started as a small team of passionate developers and designers, united by the belief that technology should be intuitive, beautiful, and accessible to everyone.</p>
+        <p>Over the years, we've grown into a trusted partner for businesses worldwide, delivering innovative mobile and web applications that solve complex problems and drive meaningful results. Our success is built on a foundation of technical excellence, creative thinking, and an unwavering commitment to our clients.</p>
+        <p>Today, Guidana continues to push the boundaries of what's possible in software development, always looking for new ways to innovate and improve.</p>
+    </section>
+
+    <section class="section">
+        <h2>Our Mission & Values</h2>
+        <div class="mission-values">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To empower businesses and individuals through innovative, user-centric software solutions that drive growth and create lasting value.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>We constantly explore new technologies and approaches to deliver cutting-edge solutions that stay ahead of the curve.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Integrity</h3>
+                <p>We believe in transparent communication, honest partnerships, and doing the right thing, even when it's challenging.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Excellence</h3>
+                <p>We maintain the highest standards in everything we do, from code quality to customer service and project delivery.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Innovation Focus</h3>
+                <p>We stay at the forefront of technology trends, continuously exploring new tools and methodologies to deliver cutting-edge solutions.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Growth</h3>
+                <p>We're committed to continuous learning and improvement, investing in our team and staying updated with industry trends.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Company Information</h2>
+        <div class="company-info-section">
+            <p style="margin: 0; color: #1a2332; font-weight: 600;">Guidana operates as a registered business entity committed to delivering world-class software solutions.</p>
+            <div class="company-info-grid">
+                <div class="company-detail">
+                    <div class="company-detail-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="company-detail-label">Company Name</div>
+                    <div class="company-detail-value">Guidana Technologies LLC</div>
+                </div>
+                <div class="company-detail">
+                    <div class="company-detail-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="company-detail-label">Location</div>
+                    <div class="company-detail-value">Wyoming, USA</div>
+                </div>
+                <div class="company-detail">
+                    <div class="company-detail-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="company-detail-label">Business Type</div>
+                    <div class="company-detail-value">Software Development</div>
+                </div>
+                <div class="company-detail">
+                    <div class="company-detail-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="company-detail-label">Contact Email</div>
+                    <div class="company-detail-value"><a href="mailto:ceo@guidana.online" style="color: #00d4ff;">ceo@guidana.online</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light-section">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-content">
+                    <h4>Founded Guidana</h4>
+                    <p>Started with a core team and a passion for building excellent software solutions.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-content">
+                    <h4>First Major Projects</h4>
+                    <p>Delivered successful mobile and web applications for international clients, establishing our reputation for quality.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h4>Global Expansion</h4>
+                    <p>Expanded operations to serve clients worldwide with innovative solutions and dedicated support.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content">
+                    <h4>Platform Development</h4>
+                    <p>Developed our own proprietary platforms and tools to enhance development efficiency and deliver better products.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h4>50+ Projects Milestone</h4>
+                    <p>Achieved 50+ completed projects with 100k+ active users across our applications and platforms.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025+</div>
+                <div class="timeline-content">
+                    <h4>Future Vision</h4>
+                    <p>Continuing to innovate and expand our capabilities, building the next generation of digital solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>By The Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number">100k+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="cta-section">
+            <h2>Ready to Work With Us?</h2>
+            <p>Let's discuss your project and bring your ideas to life.</p>
+            <a href="mailto:ceo@guidana.online" class="cta-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-company">
+                <h5>Company Information</h5>
+                <p><strong>Company:</strong> Guidana Technologies LLC</p>
+                <p><strong>Location:</strong> Wyoming, USA</p>
+                <p><strong>Business Type:</strong> Software Development</p>
+                <p><strong>Email:</strong> <a href="mailto:ceo@guidana.online" style="color: #00d4ff;">ceo@guidana.online</a></p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="/">Home</a>
+                    <a href="/#services">Features</a>
+                    <a href="/about.html">About</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/cookies.html">Cookie Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mailto:ceo@guidana.online">Contact Us</a>
+                    <a href="/#contact">Get Started</a>
+                    <a href="/about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guidana Technologies LLC. All rights reserved. | <a href="/privacy.html" style="color: #666;">Privacy</a> | <a href="/terms.html" style="color: #666;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
