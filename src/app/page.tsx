@@ -11,6 +11,7 @@ import {
   TechStack,
   Testimonials,
 } from "@/components/home/sections";
+import { Team } from "@/components/Team";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <ProcessPreview />
       <TechStack />
       <Founder />
+      <Team />
       <Testimonials />
       <FAQ />
       <FinalCTA />

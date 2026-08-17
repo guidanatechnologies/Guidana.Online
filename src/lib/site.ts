@@ -19,6 +19,28 @@ export const siteConfig = {
     detail:
       "With over a decade of expertise in full-stack development, Waqas leads Guidana with a commitment to excellence, innovation, and delivering solutions that exceed client expectations.",
   },
+  team: [
+    {
+      name: "Muhammad Osama",
+      role: "MERN Stack Developer",
+      image: "/team-photos/osama.png",
+    },
+    {
+      name: "Muhammad Soban",
+      role: "Flutter Developer",
+      image: "/team-photos/soban.jpeg",
+    },
+    {
+      name: "Zaheer Aman",
+      role: "UI/UX Designer",
+      image: "/team-photos/zaheer.jpeg",
+    },
+    {
+      name: "Fatima Amjad",
+      role: "MERN Intern",
+      image: "/team-photos/fatima.jpeg",
+    },
+  ],
   stats: [
     { value: "50+", label: "Projects Completed" },
     { value: "100k+", label: "Active Users" },

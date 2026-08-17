@@ -4,6 +4,7 @@ import { ArrowRight, Building2, Briefcase, MapPin } from "lucide-react";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { Team } from "@/components/Team";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -101,6 +102,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <Team />
 
       <section className="page-cta border-b border-line py-16">
         <div className="container-site max-w-3xl text-center text-white">
