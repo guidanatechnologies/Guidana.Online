@@ -18,7 +18,7 @@ const processVisuals: Record<string, string> = {
   Understand: "/images/hero-office.jpg",
   Design: "/images/design.jpg",
   Develop: "/images/web-dev.jpg",
-  Support: "/images/analytics.jpg",
+  Support: "/images/analytics.jpg", 
 };
 
 const processHints: Record<string, string[]> = {
