@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "Guidana Technologies LLC",
   tagline: "Professional Development Solutions",
   description:
-    "Build innovative mobile and web applications that drive growth and create meaningful user engagement. Guidana delivers iOS, Android, web, backend, marketing, and UI/UX solutions from Wyoming, USA.",
+    "Build innovative mobile and web applications that drive growth and create meaningful user engagement. Guidana delivers iOS, Android, web, backend, SEO, social media, QA, and UI/UX solutions from Wyoming, USA.",
   url: "https://www.guidana.online",
   email: "ceo@guidana.online",
   phone: "+92 304 6802911",
@@ -48,7 +48,18 @@ export const siteConfig = {
     {
       name: "Abida Parveen",
       role: "QA Engineer",
-      image: "/team-photos/women-placeholder.avif",
+      image: "/team-photos/abida.png",
+    }
+    ,
+    {
+      name: "Ayesha Khalid",
+      role: "Digital Marketer ASO",
+      image: "/team-photos/ayesha.png"
+    },
+    {
+      name: "Ayesha Anwar",
+      role: "Tajamul Iftikhar",
+      image: "/team-photos/placeholder.avif"
     }
 
   ],
@@ -116,17 +127,45 @@ export const services = [
     ],
   },
   {
-    slug: "digital-marketing",
-    title: "Digital Marketing",
+    slug: "seo",
+    title: "SEO",
     short:
-      "Growth-focused marketing that turns attention into leads — SEO, paid media, content, and conversion strategy.",
+      "Search visibility that brings the right visitors — technical SEO, on-page optimization, and content structure that ranks.",
     description:
-      "We help products get found and convert. From technical SEO and content strategy to paid campaigns and conversion optimization, marketing is tied to the product journey — not treated as a separate vendor handoff.",
+      "We improve how your product is discovered in search. From technical audits and site structure to on-page optimization and performance, SEO is built into how we ship — not added as an afterthought.",
     highlights: [
-      "Technical SEO & content strategy",
-      "Paid media & retargeting",
-      "Website conversion optimization",
-      "Marketing analytics & reporting",
+      "Technical SEO audits & fixes",
+      "On-page & metadata optimization",
+      "Core Web Vitals & site performance",
+      "Search analytics & ranking reports",
+    ],
+  },
+  {
+    slug: "social-media-handling",
+    title: "Social Media Handling",
+    short:
+      "Consistent social presence that builds trust — content planning, posting, and engagement across your key channels.",
+    description:
+      "We manage your brand on social platforms with a clear voice and steady cadence. From content calendars and creative direction to posting and community engagement, your channels stay active and on-brand.",
+    highlights: [
+      "Content planning & calendars",
+      "Platform-specific post creation",
+      "Community engagement & replies",
+      "Performance tracking & reporting",
+    ],
+  },
+  {
+    slug: "quality-assurance",
+    title: "Quality Assurance",
+    short:
+      "Thorough testing that catches issues before users do — manual QA, regression checks, and release confidence.",
+    description:
+      "We test products the way real users would. Functional testing, regression passes, and cross-device checks help you ship with confidence and reduce costly fixes after launch.",
+    highlights: [
+      "Manual functional & regression testing",
+      "Cross-browser & device coverage",
+      "Bug reporting & triage support",
+      "Pre-release QA sign-off",
     ],
   },
   {
@@ -249,12 +288,12 @@ export const faqs = [
   {
     question: "Can I hire Guidana for design or development only?",
     answer:
-      "Yes. You can engage us for UI/UX, iOS, Android, frontend, backend, marketing, or full product delivery. We scope exactly what you need — no forced bundle.",
+      "Yes. You can engage us for UI/UX, iOS, Android, frontend, backend, SEO, social media, QA, or full product delivery. We scope exactly what you need — no forced bundle.",
   },
   {
-    question: "Do you offer marketing after launch?",
+    question: "Do you offer SEO and social media after launch?",
     answer:
-      "Yes. We offer digital marketing alongside product work — SEO, paid media, content, and conversion optimization — so growth and engineering stay aligned.",
+      "Yes. We offer SEO, social media handling, and quality assurance alongside product work — so growth, visibility, and release quality stay aligned with engineering.",
   },
   {
     question: "Do you offer support after launch?",

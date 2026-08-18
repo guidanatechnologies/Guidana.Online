@@ -15,7 +15,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-            Professional mobile, web, and marketing solutions that drive growth and meaningful user
+            Professional mobile, web, SEO, social media, and QA solutions that drive growth and meaningful user
             engagement.
           </p>
           <div className="space-y-2 text-sm">

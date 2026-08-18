@@ -11,7 +11,7 @@ import { serviceVisuals } from "@/lib/visuals";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore Guidana services: iOS and Android development, web applications, digital marketing, backend solutions, UI/UX design, security, and analytics & support.",
+    "Explore Guidana services: iOS and Android development, web applications, SEO, social media handling, quality assurance, backend solutions, UI/UX design, security, and analytics & support.",
   alternates: { canonical: "/services" },
 };
 
@@ -21,7 +21,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Professional development solutions for ambitious products"
-        description={`${siteConfig.name} delivers end-to-end software and growth — from native iOS and Android apps and web applications to digital marketing, secure backends, design, and ongoing support.`}
+        description={`${siteConfig.name} delivers end-to-end software — from native iOS and Android apps and web applications to SEO, social media, QA, secure backends, design, and ongoing support.`}
         image="/images/web-dev.jpg"
         imageAlt="Software development and digital product work"
         primaryCta={{ href: "/book-a-meeting", label: "Book a Meeting" }}

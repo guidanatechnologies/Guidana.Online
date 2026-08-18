@@ -2,14 +2,16 @@ import type { LucideIcon } from "lucide-react";
 import {
   Apple,
   BarChart3,
+  ClipboardCheck,
   Code2,
   Headphones,
   LayoutTemplate,
   Lightbulb,
-  Megaphone,
   Palette,
   Rocket,
+  Search,
   Server,
+  Share2,
   ShieldCheck,
   Smartphone,
 } from "lucide-react";
@@ -33,10 +35,20 @@ export const serviceVisuals: Record<
     image: "/images/web-dev.jpg",
     imageAlt: "Web application development with code on screen",
   },
-  "digital-marketing": {
-    icon: Megaphone,
+  seo: {
+    icon: Search,
+    image: "/images/analytics.jpg",
+    imageAlt: "SEO analytics and search performance reporting",
+  },
+  "social-media-handling": {
+    icon: Share2,
     image: "/images/marketing.jpg",
-    imageAlt: "Digital marketing analytics and growth planning",
+    imageAlt: "Social media content planning and engagement",
+  },
+  "quality-assurance": {
+    icon: ClipboardCheck,
+    image: "/images/security.jpg",
+    imageAlt: "Quality assurance testing and release validation",
   },
   "backend-solutions": {
     icon: Server,

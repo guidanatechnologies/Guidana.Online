@@ -29,7 +29,7 @@ import {
 import { StatItem } from "@/components/StatItem";
 
 export function Hero() {
-  const tags = ["iOS", "Android", "Web", "Backend", "Marketing", "UI/UX"];
+  const tags = ["iOS", "Android", "Web", "Backend", "SEO", "UI/UX"];
 
   return (
     <section className="hero-split" aria-label="Guidana hero">
@@ -58,7 +58,7 @@ export function Hero() {
           </h1>
 
           <p className="hero-split__copy">
-            Let&apos;s ship iOS, Android, web, backend, and marketing with one accountable team —
+            Let&apos;s ship iOS, Android, web, backend, SEO, and design with one accountable team —
             from first idea to launch and beyond.
           </p>
 
@@ -221,7 +221,7 @@ export function ServicesPreview() {
               Engineering that ships and stays reliable
             </h2>
             <p className="mt-4 text-muted">
-              From first click to working product — iOS, Android, web, marketing, backend, design, and
+              From first click to working product — iOS, Android, web, SEO, social media, QA, backend, design, and
               support under one roof.
             </p>
           </div>
