@@ -10,8 +10,7 @@ export const siteConfig = {
   phoneHref: "tel:+923046802911",
   location: "Wyoming, USA",
   businessType: "Software Development",
-  calendlyUrl:
-    process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/osamashakil845/30min",
+  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL!,
   founder: {
     name: "Waqas Mahmood",
     role: "Founder & CEO",
