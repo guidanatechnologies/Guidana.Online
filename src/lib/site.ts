@@ -57,8 +57,8 @@ export const siteConfig = {
       image: "/team-photos/ayesha.png"
     },
     {
-      name: "Ayesha Anwar",
-      role: "Tajamul Iftikhar",
+      name: "Tajamul Iftikhar",
+      role: "SEO",
       image: "/team-photos/placeholder.avif"
     }
 
