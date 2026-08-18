@@ -21,14 +21,25 @@ export const siteConfig = {
   },
   team: [
     {
+      name: "Aqsa Ijaz",
+      role: "Senior HR Manager",
+      image: "/team-photos/aqsa.png"
+    },
+    {
       name: "Muhammad Osama",
       role: "MERN Stack Developer",
       image: "/team-photos/osama.png",
     },
+
     {
       name: "Muhammad Soban",
       role: "Flutter Developer",
       image: "/team-photos/soban.jpeg",
+    },
+    {
+      name: "Fatima Amjad",
+      role: "MERN Intern",
+      image: "/team-photos/fatima.jpeg",
     },
     {
       name: "Zaheer Aman",
@@ -36,10 +47,11 @@ export const siteConfig = {
       image: "/team-photos/zaheer.jpeg",
     },
     {
-      name: "Fatima Amjad",
-      role: "MERN Intern",
-      image: "/team-photos/fatima.jpeg",
-    },
+      name: "Abida Parveen",
+      role: "QA Engineer",
+      image: "/team-photos/women-placeholder.avif",
+    }
+
   ],
   stats: [
     { value: "50+", label: "Projects Completed" },
