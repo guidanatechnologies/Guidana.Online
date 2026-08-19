@@ -237,11 +237,52 @@ body {
   color: #7eb6ff;
 }
 
+.hero-split__wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.02em;
+  margin-top: 1.25rem;
+  font-size: clamp(2.7rem, 6vw, 4.4rem);
+}
+
+.hero-split__mark {
+  display: block;
+  height: 0.88em;
+  width: 0.88em;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 .hero-split__brand {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(2.7rem, 6vw, 4.4rem);
+  font-size: 1em;
   font-weight: 800;
   letter-spacing: -0.045em;
+  line-height: 0.92;
+  color: #fff;
+}
+
+.footer-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.02em;
+  font-size: 2.15rem;
+  color: #fff;
+}
+
+.footer-wordmark__mark {
+  display: block;
+  height: 1em;
+  width: 1em;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.footer-wordmark__text {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 0.92;
   color: #fff;
 }

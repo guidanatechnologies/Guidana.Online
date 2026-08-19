@@ -14,12 +14,12 @@ export function Header() {
       <div className="container-site flex h-[72px] items-center justify-between gap-4">
         <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label={`${siteConfig.name} home`}>
           <Image
-            src="/logo.svg"
+            src="/guidana-logo.png"
             alt={`${siteConfig.name} logo`}
-            width={42}
-            height={42}
+            width={48}
+            height={48}
             priority
-            className="h-9 w-9 shrink-0 sm:h-[42px] sm:w-[42px]"
+            className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
           />
           <div className="min-w-0 leading-tight">
             <span className="block truncate font-[family-name:var(--font-display)] text-base font-bold tracking-tight text-foreground sm:text-lg">

@@ -7,7 +7,7 @@ export function JsonLd() {
     name: siteConfig.legalName,
     alternateName: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.svg`,
+    logo: `${siteConfig.url}/guidana-logo.png`,
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: {

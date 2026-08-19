@@ -8,11 +8,15 @@ export function Footer() {
     <footer className="border-t border-line bg-[#0b1220] text-slate-300">
       <div className="container-site grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4 lg:col-span-1">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <Image src="/logo.svg" alt={`${siteConfig.name} logo`} width={40} height={40} />
-            <span className="font-[family-name:var(--font-display)] text-xl font-semibold text-white">
-              {siteConfig.name}
-            </span>
+          <Link href="/" className="footer-wordmark" aria-label={`${siteConfig.name} home`}>
+            <Image
+              src="/guidana-logo-white.png"
+              alt=""
+              width={40}
+              height={40}
+              className="footer-wordmark__mark"
+            />
+            <span className="footer-wordmark__text">uidana</span>
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-slate-400">
             Professional mobile, web, SEO, social media, and QA solutions that drive growth and meaningful user

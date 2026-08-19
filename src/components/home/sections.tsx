@@ -41,16 +41,16 @@ export function Hero() {
         <div className="hero-split__content fade-up">
           <p className="hero-split__eyebrow">Software house · Wyoming, USA</p>
 
-          <div className="mt-5 flex items-center gap-3">
+          <div className="hero-split__wordmark">
             <Image
-              src="/logo.svg"
+              src="/guidana-logo-white.png"
               alt=""
-              width={48}
-              height={48}
+              width={72}
+              height={72}
               priority
-              className="h-11 w-11 brightness-0 invert sm:h-12 sm:w-12"
+              className="hero-split__mark"
             />
-            <p className="hero-split__brand">Guidana</p>
+            <p className="hero-split__brand">uidana</p>
           </div>
 
           <h1 className="hero-split__headline">

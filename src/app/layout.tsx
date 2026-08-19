@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: [{ url: "/logo.svg", width: 70, height: 70, alt: siteConfig.name }],
+    images: [{ url: "/guidana-logo.png", width: 512, height: 512, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary",
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/logo.svg"],
+    images: ["/guidana-logo.png"],
   },
   alternates: {
     canonical: "/",
