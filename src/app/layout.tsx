@@ -51,7 +51,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/guidana-logo.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
   },
 };
 
