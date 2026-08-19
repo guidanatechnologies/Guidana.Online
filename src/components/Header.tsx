@@ -25,7 +25,7 @@ export function Header() {
             <span className="block truncate font-[family-name:var(--font-display)] text-base font-bold tracking-tight text-foreground sm:text-lg">
               {siteConfig.name}
             </span>
-            <span className="hidden text-[11px] font-medium uppercase tracking-[0.14em] text-muted sm:block">
+            <span className="block text-[11px] font-medium uppercase tracking-[0.14em] text-muted">
               Technologies LLC
             </span>
           </div>
