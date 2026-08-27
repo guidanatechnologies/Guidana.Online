@@ -221,7 +221,7 @@ export function ServicesPreview() {
               Engineering that ships and stays reliable
             </h2>
             <p className="mt-4 text-muted">
-              From first click to working product — iOS, Android, web, SEO, social media, QA, backend, design, and
+              From first click to working product — iOS, Android, web, SEO, social media, QA, backend, design, UI/UX, Security, ASO, Analytics and
               support under one roof.
             </p>
           </div>
