@@ -77,6 +77,7 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
+  { label: "Home", href: "/" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/process", label: "Process" },
@@ -222,6 +223,20 @@ export const services = [
       "Application monitoring",
       "Ongoing technical support",
       "Iteration based on real usage",
+    ],
+  },
+    {
+    slug: "aso",
+    title: "App Store Optimization",
+    short:
+      "Improve your app's visibility and downloads with strategic App Store Optimization across the Apple App Store and Google Play.",
+    description:
+      "We optimize your mobile app's presence in the App Store and Google Play to improve visibility, attract the right users, and increase organic downloads. From keyword research and metadata optimization to app listing improvements and performance tracking, we help your app compete more effectively.",
+    highlights: [
+      "App Store & Google Play optimization",
+      "Keyword research & optimization",
+      "App title, description & metadata optimization",
+      "App performance tracking & reporting",
     ],
   },
 ] as const;

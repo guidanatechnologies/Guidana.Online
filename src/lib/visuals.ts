@@ -70,6 +70,11 @@ export const serviceVisuals: Record<
     image: "/images/analytics.jpg",
     imageAlt: "Product analytics dashboards and reporting",
   },
+    aso: {
+    icon: BarChart3,
+    image: "/images/aso.png",
+    imageAlt: "App Store Optimization and mobile app performance analytics",
+  },
 };
 
 export const processIcons: Record<string, LucideIcon> = {
