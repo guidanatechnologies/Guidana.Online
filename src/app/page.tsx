@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Leadership } from "@/components/home/Leadership";
 import {
   FAQ,
   FinalCTA,
-  Founder,
+ 
+
   Hero,
   ProblemSolution,
   ProcessPreview,
@@ -29,7 +31,8 @@ export default function HomePage() {
       <StatsBand />
       <ProcessPreview />
       <TechStack />
-      <Founder />
+      <Leadership />
+      
       <Team />
       <Testimonials />
       <FAQ />
