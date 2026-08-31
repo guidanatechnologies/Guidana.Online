@@ -18,6 +18,26 @@ export const siteConfig = {
     detail:
       "With over a decade of expertise in full-stack development, Waqas leads Guidana with a commitment to excellence, innovation, and delivering solutions that exceed client expectations.",
   },
+
+leadership: [
+  {
+    name: "Waqas Mahmood",
+    role: "Founder & CEO",
+    image: "/images/founder.png",
+    bio: "Visionary leader with extensive experience in software development and business strategy. Passionate about building innovative products that solve real-world problems and create lasting impact.",
+    detail:
+      "With over a decade of expertise in full-stack development, Waqas leads Guidana with a commitment to excellence, innovation, and delivering solutions that exceed client expectations.",
+  },
+{
+  name: "Aqsa Ijaz",
+  role: "Senior HR Manager",
+  image: "/team-photos/aqsa.png",
+  bio: "People-focused professional dedicated to building a positive and collaborative work environment. Passionate about helping team members grow, strengthening workplace culture, and creating a team where people can do their best work.",
+  detail:
+    "As Senior HR Manager, Aqsa supports Guidana's people and culture through team development, effective communication, employee support, and strong people practices that help the company grow with a motivated and connected team.",
+},
+],
+
   team: [
     {
       name: "Aqsa Ijaz",

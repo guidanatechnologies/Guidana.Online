@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import { type CSSProperties } from "react";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -503,82 +505,233 @@ export function TechStack() {
 }
 
 export function Founder() {
-  const focus = [
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const leaders = siteConfig.leadership;
+
+  useEffect(() => {
+    if (leaders.length < 2) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % leaders.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [leaders.length]);
+
+  const founderFocus = [
     { label: "Product-first delivery", Icon: Target },
     { label: "Clear client partnership", Icon: Users },
     { label: "Practical innovation", Icon: Sparkles },
   ];
 
+  const hrFocus = [
+    { label: "People-first culture", Icon: Users },
+    { label: "Strong team communication", Icon: Mail },
+    { label: "Team growth & development", Icon: Sparkles },
+  ];
+
+  const leader = leaders[activeIndex];
+
+  const focus =
+    leader.role === "Founder & CEO" ? founderFocus : hrFocus;
+
   return (
-    <section className="founder-band border-b border-line py-16 lg:py-24" aria-label="Meet our founder">
-      <div className="container-site grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-        <Reveal className="founder-portrait">
-          <div className="founder-portrait__glow" aria-hidden />
-          <div className="founder-portrait__media">
-            <Image
-              src="/images/founder.png"
-              alt={`${siteConfig.founder.name}, ${siteConfig.founder.role}`}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1024px) 100vw, 480px"
+    <section
+      className="founder-band border-b border-line py-16 lg:py-24"
+      aria-label="Guidana leadership"
+    >
+      <div className="container-site relative">
+
+        {/* LEFT ARROW */}
+        {leaders.length > 1 && (
+          <button
+            type="button"
+            onClick={() =>
+              setActiveIndex(
+                (current) =>
+                  (current - 1 + leaders.length) % leaders.length,
+              )
+            }
+            className="absolute left-0 top-1/2 z-30 hidden h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white text-foreground shadow-md transition hover:border-brand hover:text-brand lg:flex"
+            aria-label="Previous leader"
+          >
+            <ArrowRight
+              className="h-5 w-5 rotate-180"
+              aria-hidden
             />
-            <div className="founder-portrait__shade" aria-hidden />
-            <div className="founder-portrait__meta">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-200">
-                Meet our founder
-              </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                {siteConfig.founder.name}
-              </h2>
-              <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-sky-100">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden />
-                {siteConfig.founder.role}
-              </p>
+          </button>
+        )}
+
+        {/* MAIN SECTION */}
+        <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+
+          {/* IMAGE */}
+          <Reveal
+            key={leader.name}
+            className="founder-portrait"
+          >
+            <div className="founder-portrait__glow" aria-hidden />
+
+            <div className="founder-portrait__media">
+              <Image
+                src={leader.image}
+                alt={`${leader.name}, ${leader.role}`}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 480px"
+              />
+
+              <div
+                className="founder-portrait__shade"
+                aria-hidden
+              />
+
+              <div className="founder-portrait__meta">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-200">
+                  Leadership
+                </p>
+
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  {leader.name}
+                </h2>
+
+                <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-sky-100">
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-brand"
+                    aria-hidden
+                  />
+                  {leader.role}
+                </p>
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={120} className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">Leadership</p>
-          <h3 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Built for businesses that need software that holds
-          </h3>
-          <div className="mt-4 h-1.5 w-14 rounded-full bg-brand" aria-hidden />
+          {/* CONTENT */}
+          <Reveal
+            key={`${leader.name}-content`}
+            delay={120}
+            className="max-w-xl"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+              Leadership
+            </p>
 
-          <p className="mt-6 text-base leading-relaxed text-muted">
-            {siteConfig.founder.bio}
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            {siteConfig.founder.detail}
-          </p>
+            <h3 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              {leader.role === "Founder & CEO"
+                ? "Built for businesses that need software that holds"
+                : "People, culture, and the team behind the work"}
+            </h3>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-3">
-            {focus.map((item) => (
-              <li key={item.label} className="founder-focus">
-                <span className="founder-focus__icon">
-                  <item.Icon className="h-4 w-4" aria-hidden />
-                </span>
-                <span className="text-sm font-semibold leading-snug text-foreground">
-                  {item.label}
-                </span>
-              </li>
+            <div
+              className="mt-4 h-1.5 w-14 rounded-full bg-brand"
+              aria-hidden
+            />
+
+            {/* BIO */}
+            <p className="mt-6 text-base leading-relaxed text-muted">
+              {leader.bio}
+            </p>
+
+            {/* DETAIL */}
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              {leader.detail}
+            </p>
+
+            {/* FOCUS CARDS */}
+            <ul className="mt-8 grid gap-3 sm:grid-cols-3">
+              {focus.map((item) => (
+                <li
+                  key={item.label}
+                  className="founder-focus"
+                >
+                  <span className="founder-focus__icon">
+                    <item.Icon
+                      className="h-4 w-4"
+                      aria-hidden
+                    />
+                  </span>
+
+                  <span className="text-sm font-semibold leading-snug text-foreground">
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* BUTTONS */}
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <Button
+                href="/book-a-meeting"
+                className="rounded-full px-6"
+              >
+                Book a Meeting
+                <ArrowRight
+                  className="h-4 w-4"
+                  aria-hidden
+                />
+              </Button>
+
+              <Button
+                href="/contact"
+                variant="secondary"
+                className="rounded-full px-6"
+              >
+                Talk to our team
+              </Button>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* RIGHT ARROW */}
+        {leaders.length > 1 && (
+          <button
+            type="button"
+            onClick={() =>
+              setActiveIndex(
+                (current) =>
+                  (current + 1) % leaders.length,
+              )
+            }
+            className="absolute right-0 top-1/2 z-30 hidden h-11 w-11 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white text-foreground shadow-md transition hover:border-brand hover:text-brand lg:flex"
+            aria-label="Next leader"
+          >
+            <ArrowRight
+              className="h-5 w-5"
+              aria-hidden
+            />
+          </button>
+        )}
+
+        {/* DOTS */}
+        {leaders.length > 1 && (
+          <div
+            className="mt-8 flex items-center justify-center gap-2"
+            role="tablist"
+            aria-label="Leadership slides"
+          >
+            {leaders.map((member, index) => (
+              <button
+                key={member.name}
+                type="button"
+                role="tab"
+                aria-selected={activeIndex === index}
+                aria-label={`Show ${member.name}`}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  activeIndex === index
+                    ? "w-8 bg-brand"
+                    : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                }`}
+              />
             ))}
-          </ul>
-
-          <div className="mt-9 flex flex-wrap items-center gap-3">
-            <Button href="/book-a-meeting" className="rounded-full px-6">
-              Book a Meeting
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </Button>
-            <Button href="/contact" variant="secondary" className="rounded-full px-6">
-              Talk to our team
-            </Button>
           </div>
-        </Reveal>
+        )}
       </div>
     </section>
   );
 }
+
 
 export function Testimonials() {
   return (
