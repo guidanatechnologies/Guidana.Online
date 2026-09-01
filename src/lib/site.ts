@@ -58,7 +58,7 @@ leadership: [
     {
       name: "Fatima Amjad",
       role: "MERN Intern",
-      image: "/team-photos/fatima.jpeg",
+      image: "/team-photos/newfatima.jpeg",
     },
     {
       name: "Zaheer Aman",
@@ -80,6 +80,21 @@ leadership: [
       name: "Tajamul Iftikhar",
       role: "SEO",
       image: "/team-photos/placeholder.avif"
+    },
+    {
+      name: "Taha Kiyani",
+      role: "Flutter Intern",
+      image: "/team-photos/Taha.jpeg"
+    },
+    {
+      name: "Touseef Ahmad",
+      role: "Flutter Intern",
+      image: "/team-photos/touseef.jpeg"
+    },
+    {
+      name: "Muneeza Ramzan",
+      role: "UI/UX Designer",
+      image: "/team-photos/muneeza-v2.jpeg"
     }
 
   ],
