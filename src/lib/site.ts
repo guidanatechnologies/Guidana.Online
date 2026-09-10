@@ -58,7 +58,7 @@ leadership: [
     {
       name: "Fatima Amjad",
       role: "MERN Intern",
-      image: "/team-photos/newfatima.jpeg",
+      image: "/team-photos/Fatimaimg.jpeg",
     },
     {
       name: "Zaheer Aman",
@@ -84,12 +84,12 @@ leadership: [
     {
       name: "Taha Kiyani",
       role: "Flutter Intern",
-      image: "/team-photos/Taha.jpeg"
+      image: "/team-photos/Tahaimg.jpeg"
     },
     {
       name: "Touseef Ahmad",
       role: "Flutter Intern",
-      image: "/team-photos/touseef.jpeg"
+      image: "/team-photos/Touseefimg.jpeg"
     },
     {
       name: "Muneeza Ramzan",
