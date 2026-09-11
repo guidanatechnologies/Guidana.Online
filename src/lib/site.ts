@@ -8,6 +8,8 @@ export const siteConfig = {
   email: "ceo@guidana.online",
   phone: "+92 304 6802911",
   phoneHref: "tel:+923046802911",
+  secondaryPhone: "+1 307 443 6242",
+  secondaryPhoneHref: "tel:+13074436242",
   location: "Wyoming, USA",
   businessType: "Software Development",
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL!,

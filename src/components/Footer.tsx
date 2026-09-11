@@ -32,11 +32,17 @@ export function Footer() {
                 {siteConfig.email}
               </a>
             </p>
-            <p className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-brand" aria-hidden />
-              <a href={siteConfig.phoneHref} className="hover:text-white">
-                {siteConfig.phone}
-              </a>
+            <p className="flex items-start gap-2">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+              <span className="inline-flex flex-wrap items-center gap-1.5">
+                <a href={siteConfig.phoneHref} className="hover:text-white">
+                  {siteConfig.phone}
+                </a>
+                <span aria-hidden="true">,</span>
+                <a href={siteConfig.secondaryPhoneHref} className="hover:text-white">
+                  {siteConfig.secondaryPhone}
+                </a>
+              </span>
             </p>
             <p className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-brand" aria-hidden />
